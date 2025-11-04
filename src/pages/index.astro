@@ -38,28 +38,29 @@ import Button from "@components/Button.astro";
                     <Button href="mailto:contact@kowo.dev" variant="primary">
                         Let&apos;s chat
                     </Button>
+                    <Button href="/team">Team</Button>
                 </div>
             </p>
+
+            <style>
+                html {
+                    scroll-behavior: smooth;
+                }
+
+                @keyframes pulse {
+                    0%,
+                    100% {
+                        opacity: 1;
+                    }
+                    50% {
+                        opacity: 0.5;
+                    }
+                }
+
+                .animate-pulse {
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                }
+            </style>
         </div>
-    </section>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        @keyframes pulse {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-    </style>
-</Layout>
+    </section></Layout
+>

@@ -1,0 +1,47 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navigation from "@components/Navigation.astro";
+import Button from "@components/Button.astro";
+---
+
+<Layout title="Kowo" description="Our cool team">
+    <Navigation />
+
+    <section class="pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-gray-100/50 -z-10"
+        >
+        </div>
+
+        <h1
+            class="text-6xl md:text-8xl font-light text-black mb-8 leading-tight tracking-tight text-center"
+        >
+            Our team.
+        </h1>
+
+        <div class="flex gap-6 place-content-center">
+            <img src="/david.jpeg" alt="David's image" class="h-50 w-50" />
+            <img src="/diogo_image.png" alt="Diogo's image" class="h-50 w-50" />
+        </div>
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+            }
+
+            .animate-pulse {
+                animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+        </style>
+    </section>
+</Layout>
