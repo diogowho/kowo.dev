@@ -1,0 +1,72 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    tags?: string[];
+    link?: string;
+    class?: string;
+}
+
+const {
+    title,
+    description,
+    tags = [],
+    link,
+    class: className = "",
+} = Astro.props;
+---
+
+<div
+    class={`group bg-white/60 backdrop-blur-xl border border-gray-200/50 hover:border-gray-300/80 transition-all duration-300 rounded-3xl shadow-lg hover:shadow-2xl ${className}`}
+>
+    <div class="p-8">
+        <div class="mb-4">
+            <h3
+                class="text-xl font-medium text-black mb-2 group-hover:text-gray-600 transition-colors"
+            >
+                {title}
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+                {description}
+            </p>
+        </div>
+
+        {
+            tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mb-6">
+                    {tags.map((tag) => (
+                        <span class="px-4 py-2 text-xs uppercase tracking-wider text-gray-500 bg-gray-50/80 backdrop-blur-sm rounded-full border border-gray-100/50">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            )
+        }
+
+        {
+            link && (
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center text-sm text-black group-hover:gap-2 transition-all"
+                >
+                    View Project
+                    <svg
+                        class="w-4 h-4 ml-1 group-hover:ml-0 transition-all"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                    </svg>
+                </a>
+            )
+        }
+    </div>
+</div>

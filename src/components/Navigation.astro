@@ -1,0 +1,22 @@
+---
+interface Props {
+    class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<nav
+    class={`fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-2xl border-b border-gray-200/50 z-50 shadow-sm ${className}`}
+>
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            <a
+                href="/"
+                class="text-lg font-medium text-black hover:text-gray-600 transition-colors"
+            >
+                Kowo
+            </a>
+        </div>
+    </div>
+</nav>

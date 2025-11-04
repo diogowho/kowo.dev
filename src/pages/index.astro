@@ -1,0 +1,65 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navigation from "@components/Navigation.astro";
+import Button from "@components/Button.astro";
+---
+
+<Layout
+    title="Kowo"
+    description="Two university friends creating software we're proud of."
+>
+    <Navigation />
+
+    <section class="pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-gray-100/50 -z-10"
+        >
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-full text-sm text-gray-600 mb-8 shadow-lg"
+            >
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                ></span>
+                Available for projects
+            </div>
+
+            <h1
+                class="text-6xl md:text-8xl font-light text-black mb-8 leading-tight tracking-tight"
+            >
+                We build cool stuff.
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto"
+            >
+                Two university friends turning ideas into software.
+                <div class="flex flex-wrap justify-center gap-4">
+                    <Button href="#contact" variant="primary">
+                        Let&apos;s chat
+                    </Button>
+                </div>
+            </p>
+        </div>
+    </section>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</Layout>

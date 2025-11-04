@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+    * {
+        @apply border-gray-200;
+    }
+
+    html {
+        @apply antialiased;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-white text-black;
+        font-family:
+            -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+            sans-serif;
+        font-feature-settings:
+            "kern" 1,
+            "liga" 1,
+            "calt" 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-light tracking-tight;
+    }
+
+    p {
+        @apply text-gray-600;
+    }
+
+    a {
+        @apply transition-all duration-300;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Glass morphism utilities */
+    .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .glass-dark {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    /* Smooth shadows */
+    .shadow-soft {
+        box-shadow:
+            0 2px 24px -4px rgba(0, 0, 0, 0.04),
+            0 4px 12px -2px rgba(0, 0, 0, 0.03);
+    }
+
+    .shadow-soft-lg {
+        box-shadow:
+            0 4px 48px -8px rgba(0, 0, 0, 0.06),
+            0 8px 24px -4px rgba(0, 0, 0, 0.04);
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Selection styling */
+::selection {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
+
+::-moz-selection {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
