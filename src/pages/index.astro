@@ -39,28 +39,30 @@ import Button from "@components/Button.astro";
                         Let&apos;s chat
                     </Button>
                     <Button href="/team">Team</Button>
+                    <Button href="/services">Services</Button>
                 </div>
+
+                <style>
+                    html {
+                        scroll-behavior: smooth;
+                    }
+
+                    @keyframes pulse {
+                        0%,
+                        100% {
+                            opacity: 1;
+                        }
+                        50% {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .animate-pulse {
+                        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1)
+                            infinite;
+                    }
+                </style>
             </p>
-
-            <style>
-                html {
-                    scroll-behavior: smooth;
-                }
-
-                @keyframes pulse {
-                    0%,
-                    100% {
-                        opacity: 1;
-                    }
-                    50% {
-                        opacity: 0.5;
-                    }
-                }
-
-                .animate-pulse {
-                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                }
-            </style>
         </div>
-    </section></Layout
->
+    </section>
+</Layout>
